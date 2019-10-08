@@ -8,21 +8,21 @@ const initialState = {
   todos: [
     {
       description: "mow the lawn",
-      id: moment(new Date()).format('LT'),
+      id: moment(new Date()).format('lll'),
       completed: false,
-      toComplete: moment(new Date()).add(1, 'days').calendar()
+      toComplete: moment(new Date()).add(1, 'days').format('lll')
     },
     {
       description: "wash the dishes",
-      id: moment(new Date()).format('LT'),
+      id: moment(new Date()).format('lll'),
       completed: false,
-      toComplete: moment(new Date()).add(2, 'days').calendar()
+      toComplete: moment(new Date()).add(2, 'days').format('lll')
     },
     {
       description: "tidy your room",
-      id: moment(new Date()).format('LT'),
+      id: moment(new Date()).format('lll'),
       completed: false,
-      toComplete: moment(new Date()).add(3, 'days').calendar()
+      toComplete: moment(new Date()).add(3, 'days').format('lll')
     }
   ],
   form: {
