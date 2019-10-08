@@ -51,6 +51,7 @@ const reducer = (state, action) => {
           if (todo.description === action.description) {
             return { ...todo, completed: !todo.completed };
           }
+          console.log(todo.description + " || " + action.description)
           return todo;
         })
       };
