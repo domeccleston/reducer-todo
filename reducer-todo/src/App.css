@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.unchecked {
+  text-decoration: none;
+}
+
+.clear {
+  margin-top: 0.5em;
+}
