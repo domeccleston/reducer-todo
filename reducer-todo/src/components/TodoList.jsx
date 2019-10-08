@@ -13,13 +13,19 @@ export default function TodoList({ state, dispatch }) {
           }
         >
           {todo.description}
-          {' '}
+          {' added: '}
           {todo.id}
+          {' , to complete by: '}
+          {todo.toComplete}
         </h3>
       ))}
       <button className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
         Clear
       </button>
+{/*       {state.todos.map(todo => {
+        return <h3>{moment(new Date()).calendar()}</h3>
+      }
+      )} */}
     </div>
   );
 }

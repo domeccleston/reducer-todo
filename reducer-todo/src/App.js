@@ -9,17 +9,20 @@ const initialState = {
     {
       description: "mow the lawn",
       id: 1,
-      completed: false
+      completed: false,
+      toComplete: moment(new Date()).add(1, 'days').calendar()
     },
     {
       description: "wash the dishes",
       id: 2,
-      completed: false
+      completed: false,
+      toComplete: moment(new Date()).add(2, 'days').calendar()
     },
     {
       description: "tidy your room",
       id: 3,
-      completed: false
+      completed: false,
+      toComplete: moment(new Date()).add(1, 'days').calendar()
     }
   ],
   form: {
