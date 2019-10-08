@@ -1,4 +1,5 @@
 import React from "react";
+import { Input, Button } from "semantic-ui-react";
 
 export default function TodoForm({ state, dispatch }) {
   const handleChangeDispatch = event => {
@@ -9,19 +10,31 @@ export default function TodoForm({ state, dispatch }) {
   };
 
   const handleSubmitDispatch = event => {
+    if (state.form === "") {
+      event.preventDefault()
+    } else {
     event.preventDefault();
-    console.log(state);
+    dispatch({ type: "ADD", payload: state.form })
+    console.log(state)
+    }
   };
   return (
     <form onSubmit={handleSubmitDispatch}>
-      <input
+      <Input
         onChange={handleChangeDispatch}
         type="text"
         placeholder="Enter todos"
       />
-      <button onClick={event => dispatch({ type: "ADD", payload: state.form })}>
+      <Input
+        icon="tags"
+        iconPosition="left"
+        label={{ tag: true, content: "Add Tag" }}
+        labelPosition="right"
+        placeholder="Enter tags"
+      />
+      <Button className ="add-button">
         Add
-      </button>
+      </Button>
     </form>
   );
 }

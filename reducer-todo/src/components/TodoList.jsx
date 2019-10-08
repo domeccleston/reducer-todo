@@ -1,14 +1,13 @@
 import React from "react";
-import moment from 'moment'
+import moment from 'moment';
+import { Button, Card } from 'semantic-ui-react';
+
 
 export default function TodoList({ state, dispatch }) {
-  const a = moment(state.todos[0].id)
-  const b = moment(state.todos[0].toComplete)
-  console.log(a.diff(b, 'hours'))
   return (
-    <div>
+    <div className="todos-container">
       {state.todos.map(todo => (
-        <>
+        <Card className="todo-card">
         <h3
           className={todo.completed ? "checked" : "unchecked"}
           onClick={event =>
@@ -19,16 +18,14 @@ export default function TodoList({ state, dispatch }) {
         </h3>
         <h3>
         {!todo.completed && `Added: ${todo.id}. To complete by: ${todo.toComplete}`}</h3>
-        {moment(todo.toComplete).diff(moment(todo.id)) < 0 ? "Overdue!" : ""}
-        </>
+        {moment(todo.toComplete).diff(moment(todo.id)) < 0 ? <span className="overdue">Overdue!</span> : ""}
+        <br></br>
+        {`Tags: `}
+        </Card>
       ))}
-      <button className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
+      <Button className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
         Clear
-      </button>
-{/*       {state.todos.map(todo => {
-        return <h3>{moment(new Date()).calendar()}</h3>
-      }
-      )} */}
+      </Button>
     </div>
   );
 }
