@@ -15,10 +15,7 @@ export default function TodoList({ state, dispatch }) {
           {todo.description}
         </h3>
         <h3>
-        {' added: '}
-        {todo.id}
-        {' , to complete by: '}
-        {todo.toComplete}</h3>
+        {!todo.completed && `Added: ${todo.id}. To complete by: ${todo.toComplete}`}</h3>
         </>
       ))}
       <button className="clear" onClick={() => dispatch({ type: "CLEAR" })}>

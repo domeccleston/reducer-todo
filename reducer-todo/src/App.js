@@ -8,21 +8,21 @@ const initialState = {
   todos: [
     {
       description: "mow the lawn",
-      id: 1,
+      id: moment(new Date()).format('LT'),
       completed: false,
       toComplete: moment(new Date()).add(1, 'days').calendar()
     },
     {
       description: "wash the dishes",
-      id: 2,
+      id: moment(new Date()).format('LT'),
       completed: false,
       toComplete: moment(new Date()).add(2, 'days').calendar()
     },
     {
       description: "tidy your room",
-      id: 3,
+      id: moment(new Date()).format('LT'),
       completed: false,
-      toComplete: moment(new Date()).add(1, 'days').calendar()
+      toComplete: moment(new Date()).add(3, 'days').calendar()
     }
   ],
   form: {
@@ -51,7 +51,6 @@ const reducer = (state, action) => {
           if (todo.description === action.description) {
             return { ...todo, completed: !todo.completed };
           }
-          console.log(todo.description + " || " + action.description)
           return todo;
         })
       };
