@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.unchecked {
+  text-decoration: none;
+}
+
+.clear {
+  margin-top: 0.5em;
+}
+
+.overdue {
+  color: red;
+  font-weight: bold;
+}
+
+.add-button {
+  margin-left: 1em !important;
+  margin-bottom: 2em !important;
+}
+
+.todo-card {
+  margin: 0 auto !important;
+  margin-bottom: 1em !important;
+  padding: 1em !important;
+  text-align: center;
+}
+
+.todos-container {
+}
